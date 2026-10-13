@@ -10,6 +10,63 @@ keys, DF keys, and a future joystick + volume knob expansion for character movem
 Raspberry Pi Pico SDK, and the final hardware will be designed in KiCad and
 manufactured as a custom PCB.
 
+## Hardware Design
+
+The macropad PCB is being designed in KiCad for a Raspberry Pi Pico W-based USB HID macropad. The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder for future volume-control functionality.
+
+### PCB Specifications
+
+- **EDA software:** KiCad 10
+- **Microcontroller:** Raspberry Pi Pico W
+- **Input switches:** 6 mechanical keyboard switches
+- **Switch mounting:** Kailh CPG151101S11 hot-swap sockets
+- **PCB layout:** Custom-designed PCB with a 4-key top row and 2 additional keys on the right side
+- **Enclosure:** Custom 3D-printed case (planned)
+- **Connectivity:** USB through the Pico W's onboard connector
+- **Firmware:** C using the Raspberry Pi Pico SDK and TinyUSB
+
+### Hardware Components
+
+| Component | Purpose | 
+|---|---|
+| Raspberry Pi Pico | Microcontroller and USB HID interface |
+| Kailh CPG151101S11 hot-swap sockets | Allow switches to be replaced without desoldering |
+| MX Mechanical keyboard switches | Physical key inputs |
+| Custom PCB | Mounts switches and microcontroller connections |
+| Header pins / sockets | Connects the Pico to the PCB |
+| 3D-printed enclosure | Houses and protects the assembled macropad |
+| (Optional) Rotary encoder | volume control knob |
+
+
+### GPIO Mapping
+
+| Key | Pico W GPIO | Physical Pin |
+|---|---:|---:|
+| Q | GP15 | 20 |
+| W | GP14 | 19 |
+| E | GP13 | 17 |
+| R | GP17 | 22 |
+| D | GP12 | 16 |
+| F | GP16 | 21 |
+
+The switches use a shared ground connection, with GPIO internal pull-ups intended to be enabled in firmware.
+
+### PCB Development Roadmap
+
+- [x] Create the initial schematic
+- [x] Assign initial switch footprints
+- [x] Import the schematic into the PCB editor
+- [x] Finalize component placement and board outline
+- [x] Verify switch socket and Pico header footprints against physical components
+- [ ] Route PCB traces
+- [ ] Run electrical and design-rule checks
+- [ ] Generate manufacturing files
+- [ ] Manufacture and assemble the PCB
+- [ ] Design and print the enclosure
+- [ ] Test the assembled macropad
+
+*The PCB is a work in progress. Footprint compatibility, electrical connections, clearances, and manufacturing outputs must be verified before fabrication.*
+
 ## Project Roadmap
 
 - [x] Prototype button circuit on a breadboard

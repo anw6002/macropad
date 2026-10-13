@@ -1,5 +1,7 @@
 build
 !.vscode/*
-**/.history/
-**/.kicad_prl
-**/.lck
+
+# KiCad local/session files
+.history/
+*.kicad_prl
+*.lck

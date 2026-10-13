@@ -673,7 +673,7 @@
         "uuid": "8608c2dc-4404-47a1-87a6-8db121883139"
       }
     ],
-    "used_designators": "SW1-6,Pico_W_HeaderA1,J1-2,Pico_W_HeaderB1,A1,D1,E1,F1,Q1,R1,W1,#PWR1",
+    "used_designators": "SW1-6,Pico_W_HeaderA1,J1-2,Pico_W_HeaderB1,A1,D1,E1,F1,Q1,R1,W1,#PWR1,volume_control1",
     "variants": []
   },
   "sheets": [

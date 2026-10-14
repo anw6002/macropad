@@ -1,6 +1,6 @@
 # Custom Macropad for League of Legends
 
-![Prototype](images/macropad_breadboard1_new.jpg)
+![macropad_pcb](images/macropad_pcb.png)
 
 ## Overview
 
@@ -42,12 +42,12 @@ The macropad PCB is being designed in KiCad for a Raspberry Pi Pico W-based USB 
 
 | Key | Pico W GPIO | Physical Pin |
 |---|---:|---:|
-| Q | GP15 | 20 |
-| W | GP14 | 19 |
-| E | GP13 | 17 |
-| R | GP17 | 22 |
-| D | GP12 | 16 |
-| F | GP16 | 21 |
+| Q | GP01 | 02 |
+| W | GP05 | 07 |
+| E | GP09 | 12 |
+| R | GP15 | 20 |
+| D | GP13 | 17 |
+| F | GP14 | 19 |
 
 The switches use a shared ground connection, with GPIO internal pull-ups intended to be enabled in firmware.
 
@@ -58,7 +58,7 @@ The switches use a shared ground connection, with GPIO internal pull-ups intende
 - [x] Import the schematic into the PCB editor
 - [x] Finalize component placement and board outline
 - [x] Verify switch socket and Pico header footprints against physical components
-- [ ] Route PCB traces
+- [x] Route PCB traces
 - [ ] Run electrical and design-rule checks
 - [ ] Generate manufacturing files
 - [ ] Manufacture and assemble the PCB

@@ -1,28 +1,28 @@
-# Custom Macropad for League of Legends
+# Custom Hot-Swappable Macropad for League of Legends
 
 ![macropad_pcb](images/macropad_pcb.png)
 
 ## Overview
 
-This project implements a custom USB macropad using the Raspberry Pi Pico W.
+This project implements a custom USB macropad using the Raspberry Pi Pico.
 The macropad is designed for League of Legends, providing dedicated QWER ability
 keys, DF keys, and a future joystick + volume knob expansion for character movement using League's new WASD support. The firmware is written in C using the
-Raspberry Pi Pico SDK, and the final hardware will be designed in KiCad and
+Raspberry Pi Pico SDK, and the final hardware is designed in KiCad and
 manufactured as a custom PCB.
 
 ## Hardware Design
 
-The macropad PCB is being designed in KiCad for a Raspberry Pi Pico W-based USB HID macropad. The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder for future volume-control functionality.
+The macropad PCB is designed in KiCad for a Raspberry Pi Pico W-based USB HID macropad. The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for future volume-control functionality.
 
 ### PCB Specifications
 
 - **EDA software:** KiCad 10
-- **Microcontroller:** Raspberry Pi Pico W
+- **Microcontroller:** Raspberry Pi Pico
 - **Input switches:** 6 mechanical keyboard switches
 - **Switch mounting:** Kailh CPG151101S11 hot-swap sockets
 - **PCB layout:** Custom-designed PCB with a 4-key top row and 2 additional keys on the right side
 - **Enclosure:** Custom 3D-printed case (planned)
-- **Connectivity:** USB through the Pico W's onboard connector
+- **Connectivity:** USB through the Pico's onboard connector
 - **Firmware:** C using the Raspberry Pi Pico SDK and TinyUSB
 
 ### Hardware Components
@@ -40,7 +40,7 @@ The macropad PCB is being designed in KiCad for a Raspberry Pi Pico W-based USB 
 
 ### GPIO Mapping
 
-| Key | Pico W GPIO | Physical Pin |
+| Key | Pico GPIO | Physical Pin |
 |---|---:|---:|
 | Q | GP01 | 02 |
 | W | GP05 | 07 |
@@ -74,8 +74,8 @@ The switches use a shared ground connection, with GPIO internal pull-ups intende
 - [x] Develop firmware for button detection and debouncing
 - [x] Implement USB HID keyboard functionality
 - [ ] Add macro support
-- [ ] Design the schematic in KiCad
-- [ ] Route and manufacture the PCB
+- [x] Design the schematic in KiCad
+- [x] Route and manufacture the PCB
 - [ ] Assemble and test the final board
 - [ ] Design and print a case
 

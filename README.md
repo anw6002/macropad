@@ -59,9 +59,9 @@ The switches use a shared ground connection, with GPIO internal pull-ups intende
 - [x] Finalize component placement and board outline
 - [x] Verify switch socket and Pico header footprints against physical components
 - [x] Route PCB traces
-- [ ] Run electrical and design-rule checks
-- [ ] Generate manufacturing files
-- [ ] Manufacture and assemble the PCB
+- [x] Run electrical and design-rule checks
+- [x] Generate manufacturing files
+- [x] Manufacture and assemble the PCB
 - [ ] Design and print the enclosure
 - [ ] Test the assembled macropad
 

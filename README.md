@@ -12,7 +12,7 @@ manufactured as a custom PCB.
 
 ## Hardware Design
 
-The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (also compatible withe the Raspberry Pi Pico 2). The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for future volume-control functionality.
+The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (also compatible with the Raspberry Pi Pico 2). The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for future volume-control functionality.
 
 ### PCB Specifications
 

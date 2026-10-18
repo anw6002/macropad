@@ -6,13 +6,16 @@
 
 This project implements a custom USB macropad using the Raspberry Pi Pico.
 The macropad is designed for League of Legends, providing dedicated QWER ability
-keys, DF keys, and a future joystick + volume knob expansion for character movement using League's new WASD support. The firmware is written in C using the
+keys, DF keys, and rotary encoder for volume controls. The firmware is written in C using the
 Raspberry Pi Pico SDK, and the final hardware is designed in KiCad and
 manufactured as a custom PCB.
 
+There is a planned joystick expansion for character movement using League's new WASD support.
+Up to 20 additional keys will be included in the expansion. 
+
 ## Hardware Design
 
-The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (also compatible with the Raspberry Pi Pico 2). The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for future volume-control functionality.
+The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (also compatible with the Raspberry Pi Pico 2). The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for volume-control functionality.
 
 ### PCB Specifications
 
@@ -35,7 +38,7 @@ The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (als
 | Custom PCB | Mounts switches and microcontroller connections |
 | Header pins / sockets | Connects the Pico to the PCB |
 | 3D-printed enclosure | Houses and protects the assembled macropad |
-| (Optional) Rotary encoder | volume control knob |
+| Rotary encoder | volume control knob |
 
 
 ### GPIO Mapping
@@ -74,6 +77,7 @@ The switches use a shared ground connection, with GPIO internal pull-ups intende
 - [x] Develop firmware for button detection and debouncing
 - [x] Implement USB HID keyboard functionality
 - [ ] Add macro support
+- [ ] Add rotary encoder functionality
 - [x] Design the schematic in KiCad
 - [x] Route and manufacture the PCB
 - [ ] Assemble and test the final board

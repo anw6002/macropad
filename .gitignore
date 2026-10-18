@@ -5,3 +5,4 @@ build
 .history/
 *.kicad_prl
 *.lck
+.gerbers/

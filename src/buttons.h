@@ -10,7 +10,7 @@
 #define BUTTONS_H
 #include <stdbool.h>
 
-#define BUTTON_COUNT 7
+#define BUTTON_COUNT 6
 
 typedef enum
 {
@@ -20,7 +20,6 @@ typedef enum
     BUTTON_R,
     BUTTON_D,
     BUTTON_F,
-    BUTTON_P
 } Button;
 
 typedef enum

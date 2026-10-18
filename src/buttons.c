@@ -18,13 +18,12 @@ static bool stable_state[BUTTON_COUNT];
 static absolute_time_t last_change[BUTTON_COUNT];
 static const unsigned int BUTTON_PINS[BUTTON_COUNT] =
 {
+    1,
+    5,
+    9,
     15,
-    14,
     13,
-    12,
-    11,
-    10,
-    9
+    14,
 };
 
 /**

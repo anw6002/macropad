@@ -1,5 +1,9 @@
 # Custom Hot-Swappable Macropad for League of Legends
 
+**Table of Contents:** \
+[Overview](#overview) · [Hardware Design](#hardware-design) · [PCB Specifications](#pcb-specifications) · [Hardware Components](#hardware-components)
+· [GPIO Mapping](#gpio-mapping) · [Technologies](#technologies)· [Button Module Specifications](#button-module-specifications)
+
 ![macropad_pcb](images/macropad_pcb.png)
 
 ## Overview
@@ -96,7 +100,8 @@ The switches use a shared ground connection, with GPIO internal pull-ups intende
 
 ### Purpose
 
-The button module provides an interface for initializing and scanning the macropad's pushbuttons. It abstracts the GPIO hardware and reports button press and release events.
+The button module provides an interface for initializing and scanning the macropad's pushbuttons. It abstracts the GPIO hardware and \
+reports button press and release events.
 
 ### Functional Requirements
 - Initialize all configured GPIO pins as digital inputs.
@@ -112,4 +117,15 @@ The button module provides an interface for initializing and scanning the macrop
 - One side of every switch is connected to a GPIO pin.
 - The opposite side is connected to ground.
 - Internal pull-up resistors are enabled.
-- buttons_scan() is called periodically from the main loop.
+
+### Button Debouncing
+This Macropad utilizes MX Mechanical Keyboard switches that connect the GPIO pin to GND when pressed. \
+\
+When pressing a mechanical keyboard switch, metal contacts in the switch can briefly bounce, causing a short duration in which the microcontroller
+reads a rapid fluctuation between HIGH (1) and LOW (0) for the pin. Debouncing is implemented to make sure a single button press does not register as multiple
+events. \
+\
+Software debouncing filters out these transient fluctuations by accepting a state change only after the button state has remained stable for a set amount of time, preventing
+a single physical press from being registered as multiple events. For this repository's implementation, the debounce timer is set to 10 ms.
+
+

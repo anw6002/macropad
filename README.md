@@ -1,8 +1,10 @@
 # Custom Hot-Swappable Macropad for League of Legends
 
-**Table of Contents:** \
-[Overview](#overview) · [Hardware Design](#hardware-design) · [PCB Specifications](#pcb-specifications) · [Hardware Components](#hardware-components)
-· [GPIO Mapping](#gpio-mapping) · [Technologies](#technologies)· [Button Module Specifications](#button-module-specifications)
+**Table of Contents**
+
+[Overview](#overview) · [Hardware Design: Version 1](#hardware-design-version-1) · [Version 1 PCB Specifications](#ver-1-pcb-specifications) · [Hardware Components](#hardware-components) · [GPIO Mapping](#gpio-mapping) · [Button Module Specifications](#button-module-specifications)  
+
+[Hardware Design: Version 2 (In Progress)](#hardware-design-version-2-in-progress)
 
 
 ## Overview
@@ -16,11 +18,21 @@ manufactured as a custom PCB.
 There is a planned joystick expansion for character movement using League's new WASD support.
 Up to 20 additional keys will be included in the expansion. 
 
-## Hardware Design
+### Technologies
+- C
+- CAD (3D Printed Case)
+- Raspberry Pi Pico SDK
+- TinyUSB
+- KiCad
+- Altium
+- Git
+- VS Code
+
+## Hardware Design: Version 1
 
 The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (also compatible with the Raspberry Pi Pico 2). The board is intended to support six mechanical keyboard switches, with hot-swap sockets for easier switch replacement. The PCB will connect each key to a dedicated GPIO pin, with the switches sharing a common ground. The PCB design will accommodate a rotary encoder with push button for volume-control functionality.
 
-### PCB Specifications
+### Ver. 1 PCB Specifications
 
 - **EDA software:** KiCad 10
 - **Microcontroller:** Raspberry Pi Pico
@@ -57,44 +69,6 @@ The PCB is designed in KiCad for a Raspberry Pi Pico-based USB HID macropad (als
 
 The switches use a shared ground connection, with GPIO internal pull-ups intended to be enabled in firmware.
 
-### PCB Development Roadmap
-
-- [x] Create the initial schematic
-- [x] Assign initial switch footprints
-- [x] Import the schematic into the PCB editor
-- [x] Finalize component placement and board outline
-- [x] Verify switch socket and Pico header footprints against physical components
-- [x] Route PCB traces
-- [x] Run electrical and design-rule checks
-- [x] Generate manufacturing files
-- [x] Manufacture and assemble the PCB
-- [ ] Design and print the enclosure
-- [ ] Test the assembled macropad
-
-*The PCB is a work in progress. Footprint compatibility, electrical connections, clearances, and manufacturing outputs must be verified before fabrication.*
-
-## Project Roadmap
-
-- [x] Prototype button circuit on a breadboard
-- [x] Test each switch and verify wiring
-- [x] Develop firmware for button detection and debouncing
-- [x] Implement USB HID keyboard functionality
-- [ ] Add macro support
-- [ ] Add rotary encoder functionality
-- [x] Design the schematic in KiCad
-- [x] Route and manufacture the PCB
-- [ ] Assemble and test the final board
-- [ ] Design and print a case
-
-## Technologies
-- C
-- CAD (3D Printed Case)
-- Raspberry Pi Pico SDK
-- TinyUSB
-- KiCad
-- Git
-- VS Code
-
 ## Button Module Specifications
 
 ### Purpose
@@ -126,5 +100,21 @@ events. \
 \
 Software debouncing filters out these transient fluctuations by accepting a state change only after the button state has remained stable for a set amount of time, preventing
 a single physical press from being registered as multiple events. For this repository's implementation, the debounce timer is set to 10 ms.
+
+## Hardware Design: Version 2 (In Progress)
+
+V2 is a substantial redesign of the original macropad, introducing a keyboard matrix architecture and joystick integration for expanded input functionality.
+
+The updated hardware is being designed in Altium Designer, with a redesigned PCB and schematic.
+
+### Key Improvements
+
+Keyboard Matrix: Transitioning from individual GPIO connections for each switch to a row-column scanning architecture, reducing GPIO requirements and supporting an expanded number of keys.
+
+Anti-Ghosting Diodes: Incorporating diodes into the keyboard matrix to prevent unintended key detection when multiple switches are pressed simultaneously.
+
+Joystick Integration: Adding an analog joystick for WASD character movement, supporting League of Legends' WASD control scheme.
+
+Expanded Input Support: Designing the hardware to accommodate additional mechanical keyboard switches and joystick inputs.
 
 

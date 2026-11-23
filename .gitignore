@@ -6,3 +6,15 @@ build
 *.kicad_prl
 *.lck
 .gerbers/
+
+# Altium Designer generated files
+History/
+__Previews/
+*.Lck
+*.LOG
+*.log
+*.bak
+*.tmp
+
+# Altium generated output
+Project Outputs for *

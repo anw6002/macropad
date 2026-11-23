@@ -4,7 +4,6 @@
 [Overview](#overview) · [Hardware Design](#hardware-design) · [PCB Specifications](#pcb-specifications) · [Hardware Components](#hardware-components)
 · [GPIO Mapping](#gpio-mapping) · [Technologies](#technologies)· [Button Module Specifications](#button-module-specifications)
 
-![macropad_pcb](images/macropad_pcb.png)
 
 ## Overview
 

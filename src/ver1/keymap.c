@@ -30,7 +30,6 @@
         case BUTTON_F:
             return HID_KEY_F;
 
-
         default:
             return 0;
     }
